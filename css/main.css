@@ -15,7 +15,7 @@ body{
 .hero-bg {
     background-color: rgb(63, 154, 228) ;
     background-position: 0% 70%;
-    background-image: url('../images/1.jpg');
+    background-image: url('../images/2.jpg');
     color: white;
     text-align: center;
     padding-bottom: 4em;  /*around the content spacing*/
