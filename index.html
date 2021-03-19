@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My first site</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <h3>You SUCK HA!!!!</h3>
+    </div>
+    <div class="hero-bg">
+        <section class="top">
+            <header>
+                <a href="#">yummy.eats</a>        <!-- for logo-->  
+                <!-- <nav>
+                    <ul>
+                        <li><a href="Home"></a></li>
+                        <li><a href="Contact Us"></a></li>
+                        <li><a href=""></a></li>
+                    </ul> -->
+            </header>
+            
+            <H1><span>The Healthy </span>Eating Experience</H1>
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem, eum officiis architecto necessitatibus dignissimos soluta natus. Perferendis animi unde cupiditate, earum eius modi quam.</p>    
+            
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                            <label for="city">Enter your city:</label>
+                            <input type="text" name="city" id="city">
+                            <p>Example: "Pokhara"</p>        
+                    </div>
+                    
+                    <input type="button" value="Find Food Now" id="cta-btn" >
+                </form>
+
+            </div>
+        
+        
+        </section>
+        <section class="bottom">
+             
+        </section>        
+    </div>
+
+    <section class="bottom">
+            <div class="right-col">
+                <h2>Mitho Khana</h2>
+                <P>Lorem ipsum dolor sit amet 
+                    conse ctetur adipisicing elit. Nobis delectus ullam ad earum eveniet qui tenetur odio consequuntur reprehenderit dolore ducimus laborum velit architecto esse magni quod dignissimos, molestiae quisquam.</P>
+            </div>
+            <img src="images/food.jpg" alt="Picture of dumpling">
+    </section>
+       
+
+<script>
+    let btn = document.getElementById('cta-btn');
+    let overlay = document.getElementById('overlay');  
+
+    btn.addEventListener('click', () => {  /* Assigning action to the button i.e if the action is click than execute the code below*/
+        overlay.style.display = 'grid';  
+        overlay.classList.add('animate-overlay');                                 
+
+    })
+
+</script>
+
+</body>    
+</html>

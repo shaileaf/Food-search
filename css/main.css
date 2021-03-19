@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+
+/*custom properties*/
+:root {
+    --leading: 2em;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.hero-bg {
+    background-color: rgb(63, 154, 228) ;
+    background-position: 0% 70%;
+    background-image: url('../images/1.jpg');
+    color: white;
+    text-align: center;
+    padding-bottom: 4em;  /*around the content spacing*/
+}
+header {
+      padding: 1.2em 0;   
+      
+ }
+ 
+ .hero-bg a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+ }
+
+ section {
+     padding: 0 1em;
+ }
+ 
+h1{
+    font-size: 2.5 rem;
+    margin: 2em 0 1.2em; 
+    
+}
+
+h1 span {
+    text-transform: uppercase; 
+    display: block;    /*it will be in it's own line or change of line */
+    font-size: 1rem;
+    position: relative;  /* for giving position to the line*/  
+    z-index: 1;  /*for transition of underline behind word*/
+}
+
+
+/* for underline*/
+h1 span::before {
+    content: ' ';
+    position: absolute;  /*can situating things anywhere*/
+    width: 3.5em;
+    background-color: rgb(233, 227, 228);
+    height: .3em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.3em;
+}
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1em 3em;
+
+}
+ 
+
+.form-container {
+    background-color: white;
+    margin: 2em -1em 0;
+    padding: 2em;  /*around the content spacing*/
+}
+
+label {
+    color: #2D7D98;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+input[type=text] {
+    border: 1px solid rgb(226, 222, 222);
+    border-radius: .5em;
+    outline-color: rgb(241, 234, 234);
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-top: .5em;
+    box-shadow: 2px 2px 4px rgb(148, 145, 145);  /*for shadow and blur*/
+
+}
+input[type=text]:hover {
+    box-shadow: 5px 5px 4px rgb(185, 171, 171);  /*for shadow and blur*/
+
+}
+
+
+.form-container p{
+    color: gray;
+    margin-top: 1em;
+    font-weight: normal;
+    font-size: .9em;
+}
+
+input[type=button] {
+    background-color: #F89104;
+    border: none;
+    color: white;
+    width: 100%;
+    border-radius: .5em;
+    cursor: pointer;   /*for changing curser*/
+    font-weight: bold;
+    padding: 1em 0;
+    box-shadow: 2px 2px 4px gray;
+}
+
+input[type=button]:hover {
+    background-color: rgb(216, 137, 27);
+    box-shadow: 4px 4px 4px gray;
+}    
+
+.bottom {
+    margin: 0;
+
+}
+
+img {
+    width: 100%; 
+}
+
+.right-col  {
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2{
+    text-transform: uppercase;
+    
+}
+
+p{
+    line-height: var(--leading);
+}
+
+
+.overlay {
+    position: absolute;  /*allow us to overlay everything*/
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0, .9);
+    z-index: 1;
+    place-content: center;
+    color: white;
+    display: none;
+    font-size: 2em;
+    opacity: 0;
+}
+
+.animate-overlay {
+    animation: overlay 3s forwards; 
+}
+ 
+/*for responsiveness*/
+@media (min-width:720px) {
+    section{
+        padding: 0 4em;
+    }
+    .form-container {
+        
+        margin: 2em -4em 0; /*extending form*/
+        
+    }
+}
+
+@media (min-width:930px) {
+    .hero-bg{
+        text-align: left;
+
+    }
+    .hero-bg p {
+        margin: 0 0 3em;
+    }
+    .hero-bg section{
+        width: 65%;
+    }
+    .form-container {
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: .5em;
+        box-shadow: 10px 10px 8px rgba(0,0,0, .3); /* .3 is for opacitiy*/
+    }
+    form{
+        display: flex;
+    
+    }
+    .form-left {
+        width: 70%;
+        
+    }
+    label {
+        margin: .3em;
+    }
+    input[type=button] {
+        height: fit-content;
+        margin-top: 2.8em ;
+        margin-left: 2.2em;
+        width: 30%;
+        font-size: 1em;
+        padding: .7em 0;
+    }
+    .hero-bg p {
+        margin: 0;
+    }
+
+
+    section.bottom {
+        display: grid;   /*grid and flex are used to alter layout*/
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas:
+            "left right";
+    }
+    .right-col{
+        grid-area: right;
+        text-align: left;
+        align-self: center;
+        padding: 0 10%;
+    }
+    
+    img {
+        grid-area: left;
+        size: auto;
+        height: 100%;
+    }
+
+    h2{
+        margin: 0;
+    }
+    
+} 
+
+section.top {
+    animation: fadeIn 2s forwards;    
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-2em); /* for sliding down from top*/
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;        
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+
+
+}
